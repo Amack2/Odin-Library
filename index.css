@@ -1,0 +1,133 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  /* font sizes */
+
+  --medium: 32px;
+
+  /* colours */
+  --jade50: #ffffff;
+  --jade100: #f6ffde;
+  --jade200: #e3f2c1;
+  --jade300: #c9dbb2;
+  --jade500: #aac8a7;
+  --jade550: #f5f1e3;
+  --jade600: #dddbcb;
+  --jade000: black;
+}
+
+header {
+  height: 10vh;
+  background-color: var(--jade300);
+}
+
+.mainContainer {
+  display: grid;
+  height: 80vh;
+  width: 100vw;
+  background-color: var(--jade550);
+  grid-template-rows: 10% 90%;
+}
+
+.addBtn {
+  max-height: 20px;
+  max-width: 10vw;
+  align-self: center;
+  justify-self: center;
+}
+
+footer {
+  height: 10vh;
+  background-color: var(--jade300);
+}
+
+.addBookModal {
+  background-color: var(--jade500);
+  position: fixed;
+  border: 0;
+  box-shadow: 0 0 1em;
+}
+
+.addBookModal::backdrop {
+  background: black;
+  opacity: 0.2;
+}
+
+.addBookModal > form {
+  display: grid;
+  gap: 15px;
+}
+
+.addBookModal > form > .formRow > input {
+  /* appearance: none; this isnt right */
+  width: 100%;
+  border-radius: 5px;
+}
+
+.bookGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+
+  /* set up some form of active grid. just google it  */
+}
+
+.bookCard {
+  font-size: var(--medium);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+  max-height: 40%;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 5px;
+
+  background-color: var(--jade100);
+}
+
+.readToggle::after {
+  height: auto;
+  width: 200px;
+  border-radius: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.readToggle:hover {
+  filter: brightness(95%);
+}
+
+.readToggle.yes::after {
+  background-color: var(--jade500);
+  content: 'Read';
+}
+
+.readToggle::after {
+  background-color: var(--jade600);
+  content: 'Unread';
+}
+
+/* .bookCard:last-child {
+  align-items: center;
+} */
+
+.iconContainer {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  gap: 5px;
+  margin-right: 50px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 800, 'GRAD' 0, 'opsz' 48;
+}
+
+.material-symbols-outlined:hover {
+  transform: scale(1.2);
+}

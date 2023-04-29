@@ -1,0 +1,4 @@
+let BCIconClose = document.createElement('span');
+BCIconClose.classList.add('material-symbols-outlined');
+BCIconClose.innerHTML = 'close';
+bookCard.append(BCIconClose);
