@@ -1,8 +1,12 @@
 * {
+  margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
   /* font sizes */
 
-  --medium: 32px;
+  --s: 18px;
+  --m: 32px;
+  --l: 40px;
+  --xl: 48px;
 
   /* colours */
   --jade50: #ffffff;
@@ -15,36 +19,80 @@
   --jade000: black;
 }
 
-header {
-  height: 10vh;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--jade550);
+}
+
+footer {
+  margin-top: auto;
+}
+
+header,
+footer {
+  height: 100px;
   background-color: var(--jade300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
 }
 
 .mainContainer {
-  display: grid;
-  height: 80vh;
+  margin: 10px;
+  min-height: 80vh;
+  max-height: max-content;
   width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+
+  gap: 40px;
+
   background-color: var(--jade550);
   grid-template-rows: 10% 90%;
 }
 
 .addBtn {
-  max-height: 20px;
-  max-width: 10vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
   align-self: center;
   justify-self: center;
+
+  appearance: none;
+  border: none;
+
+  border-radius: 25px;
+  background-color: var(--jade500);
+  height: 50px;
+  width: 200px;
+  max-height: 50px;
+  max-width: 10vw;
+  font-size: var(--s);
+  /* font-weight: bold; */
 }
 
-footer {
-  height: 10vh;
-  background-color: var(--jade300);
+.addBtn:hover {
+  box-shadow: 0 0 0.5em;
 }
 
 .addBookModal {
-  background-color: var(--jade500);
-  position: fixed;
+  background-color: var(--jade300);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   border: 0;
   box-shadow: 0 0 1em;
+  width: 350px;
+}
+
+.newBookInput {
+  justify-content: center;
+  align-items: center;
 }
 
 .addBookModal::backdrop {
@@ -54,38 +102,70 @@ footer {
 
 .addBookModal > form {
   display: grid;
+  grid-template-columns: 30% 50%;
+  grid-template-rows: 30px 30px 30px 30px 30px;
   gap: 15px;
 }
 
-.addBookModal > form > .formRow > input {
-  /* appearance: none; this isnt right */
-  width: 100%;
+.addBookModal > form > label {
+  align-self: center;
+}
+
+.submitBookBtnContainer {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+}
+
+/* form {
+  -webkit-appearance: none;
+}
+
+input {
+  -webkit-appearance: none;
+} */
+
+.addBookModal > form > input {
   border-radius: 5px;
+  border: none;
+  height: 18px;
+}
+
+.addBookModal > form > input:hover {
+  filter: brightness(95%);
 }
 
 .bookGrid {
+  height: fit-content;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 40px;
-
-  /* set up some form of active grid. just google it  */
 }
 
 .bookCard {
-  font-size: var(--medium);
+  font-size: var(--m);
   display: flex;
   flex-direction: column;
   gap: 15px;
   justify-content: center;
   align-items: center;
 
-  max-height: 40%;
-
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: 0 0 5px;
 
   background-color: var(--jade100);
+}
+
+.bookCard {
+  width: 300px;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* display: grid; */
+  gap: 1rem;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .readToggle::after {
@@ -102,7 +182,7 @@ footer {
   filter: brightness(95%);
 }
 
-.readToggle.yes::after {
+.readToggle.true::after {
   background-color: var(--jade500);
   content: 'Read';
 }
@@ -111,10 +191,6 @@ footer {
   background-color: var(--jade600);
   content: 'Unread';
 }
-
-/* .bookCard:last-child {
-  align-items: center;
-} */
 
 .iconContainer {
   display: flex;
@@ -130,4 +206,33 @@ footer {
 
 .material-symbols-outlined:hover {
   transform: scale(1.2);
+}
+
+#RSCheck {
+  height: 20px;
+  width: 20px;
+  -webkit-border-radius: 100%;
+  background-color: pink;
+}
+
+#RSCheck:checked {
+  background-color: pink;
+}
+
+#RSCheck:hover {
+  filter: brightness(95%);
+}
+
+.submitBtn {
+  border-radius: 25px;
+  background-color: var(--jade500);
+  width: 100px;
+  max-height: 35px;
+  max-width: 100px;
+  font-size: var(--s);
+  border: none;
+}
+
+.submitBtn:hover {
+  box-shadow: 0 0 0.5em;
 }

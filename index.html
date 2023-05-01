@@ -12,42 +12,35 @@
     <script src="script.js" defer></script>
     <title>Library</title>
   </head>
+  <header>My Cool Library</header>
   <body>
-    <header>My Cool Library</header>
     <main class="mainContainer">
       <button class="addBtn">Add a book!</button>
 
       <dialog class="addBookModal" id="addBookModal">
         <form class="newBookInput" method="dialog" action="">
-          <div class="formRow">
-            <label for="title">Title:</label>
-            <input for="title" type="text" id="titleInput" />
-          </div>
+          <label for="title">Title:</label>
+          <input for="title" type="text" id="titleInput" required />
 
-          <div class="formRow">
-            <label for="author">Author:</label>
-            <input for="author" type="text" id="authorInput" />
-          </div>
+          <label for="author">Author:</label>
+          <input for="author" type="text" id="authorInput" required />
 
-          <div class="formRow">
-            <label for="pageCount">Page Count:</label>
-            <input type="number" for="pageCount" id="pageCountInput" />
-          </div>
+          <label for="pageCount">Page Count:</label>
+          <input type="number" for="pageCount" id="pageCountInput" required />
 
-          <div class="formRow">
-            <input type="checkbox" id="RSCheck" name="RSCheck" value="yes" />
-            <label for="readStatusCheck">Check If Read</label>
-            <!--need to figure out how to make this check optionl  -->
+          <label for="readStatusCheck">Check If Read</label>
+          <input type="checkbox" id="RSCheck" name="RSCheck" value="yes" />
+
+          <div class="submitBookBtnContainer">
+            <button type="submit" id="submitBookBtn" class="submitBtn">
+              Submit
+            </button>
           </div>
-          <button type="submit" id="submitBookBtn">Submit</button>
         </form>
       </dialog>
 
-      <div class="bookGrid">
-        <!-- from here the js will add in books -->
-        <!-- we will need to program a window to pop up with the input fields so the DOM knows what to add to the array -->
-      </div>
+      <div class="bookGrid"></div>
     </main>
-    <footer>footer</footer>
+    <footer>Footer</footer>
   </body>
 </html>
